@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <script src="./main.js" defer></script>
+    <title>Java Web Final Project</title>
+</head>
+<body>
+    <h1>SallyAnn's Fashion Boutique</h1>
+    <h2>Inventory Database</h2>
+    <hr>
+    <main>
+        <div class="inventory-section">
+            <h3>Current Inventory</h3>
+            <div id="divContainer">
+                <!-- Where showAllInventory() will inject -->
+            </div>
+        </div>
+        
+        <div class="add-products-section">
+            <!-- Where newProduct() will accept data and store in db -->
+            <h3>Add a new product</h3>
+            <form method="POST" id="productForm">
+                <input type="text" name="itemType" id="itemType" placeholder="Flannel shirt" required>
+                <textarea row="5" col="40" name="description" id="description" placeholder="Describe the item's color, style, and dress category." required></textarea>
+                <input type="submit" value="Submit Item!" id="submit">
+            </form> 
+        </div>
+    </main>
+</body>
+</html>
