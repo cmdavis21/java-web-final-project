@@ -1,0 +1,123 @@
+/*---- CSS Reset ----*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    background-color: paleturquoise;
+    background-image: url("./images/fashion-bg.png");
+}
+
+body {
+    padding: 5rem;
+    line-height: 1.5;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+/*---- HTML Body Elements Styling----*/
+h1, h2 {
+    text-align: center;
+    
+}
+
+h1 {
+    text-transform: uppercase;
+    color: palevioletred;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+    gap: 1.5em;
+}
+
+
+.inventory-section h3, .add-products-section h3 {
+    color: black;
+    padding-bottom: 1.5em;
+    text-align: center;
+    
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.add-products-section, .inventory-section {
+    margin: 2rem 0;
+    width: 50%;
+    border: 2px dotted black;
+}
+
+/*---- GET Mapping Section of Project ----*/
+
+.inventory-section {
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 30px;
+    background-color: palevioletred; 
+    background-image: url("./images/inventory-bg.png");
+}
+
+#divContainer { /* the json string inventory container*/
+    white-space: pre;
+    font: inherit;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+/*---- POST Mapping Section of Project ----*/
+
+.add-products-section {
+    padding: 2rem;
+    min-height: 300px;
+    border-radius: 30px;
+    background-color: plum;
+    background-image: url("./images/form-bg.png");
+}
+
+#productForm { /*adds products to the db*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 250px;
+    text-align: center;
+}
+
+#productForm input, #productForm textarea {
+    display: block;
+    padding: 0.3em;
+    margin: 0.8em;
+    width: 80%;
+    border: 2px dotted black;
+    border-radius: 20px;
+    background-color: paleturquoise;
+    font-weight: bolder;
+}
+
+#productForm input[type="submit"]:hover {
+    background-color: palevioletred;
+}
