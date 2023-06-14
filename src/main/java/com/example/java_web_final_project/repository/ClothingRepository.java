@@ -9,4 +9,8 @@ import java.util.List;
 @Repository
 public interface ClothingRepository extends JpaRepository<ClothingItem, Long> {
     //custom methods
+
+//    public void findByItem(ClothingItem item) {
+//        return item.findByItem(item);
+//    }
 }
