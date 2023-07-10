@@ -4,9 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.NonNull;
 
-import java.util.Objects;
+import java.util.ArrayList;
 
 @Data
 @AllArgsConstructor
@@ -21,22 +20,25 @@ public class ClothingItem {
     private Long id;
 
     @Column(name = "image")
-    private String imageURL; //image url
+    private String image; //references image associated id to the image sql table that stores only product images
 
-    @Column(name = "item", nullable = false)
+    @Column(name = "item")
     private String itemType; //i.e., jacket, shirt, pants, etc.
 
-    @Column(name = "sizes", nullable = false)
-    private String sizes; //sizes available
+    @Column(name = "sizes")
+    private ArrayList<String> sizes; // sizes available
 
-    @Column(name = "category", nullable = false)
+    @Column(name = "colors")
+    private ArrayList<String> colors; //colors available
+
+    @Column(name = "category")
     private String category; //men or women's fashion?
 
     @Column(name = "description")
     private String description; //facts about the item
 
-    @Column(name = "price", nullable = false)
-    private double price; //price of item
+    @Column(name = "price")
+    private Double price; // Price of the item
 
     @Column(name = "discount")
     private boolean hasDiscount; //is there a discount available?

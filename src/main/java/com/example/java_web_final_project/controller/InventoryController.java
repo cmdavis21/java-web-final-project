@@ -27,16 +27,19 @@ public class InventoryController {
         return clothingService.findAll();
     }
 
-    @PostMapping("/new")
-    public void saveItems(@RequestBody List<ClothingItem> items) {
+    @PostMapping("/newItem")
+    public void saveItem(@RequestBody List<ClothingItem> items) {
         for (ClothingItem item : items) {
             clothingService.save(item);
         }
     }
 
-    @PutMapping("/update")
-    public void putItem(@RequestBody ClothingItem item) { clothingService.put(item); }
+//    @PutMapping("/updateItem/{id}")
+//    public void putItem(@PathVariable Long id, @RequestBody ClothingItem optionalItem) {
+//        optionalItem.getId();
+//        clothingService.put(optionalItem);
+//    }
 
-    @DeleteMapping("/remove/{id}")
+    @DeleteMapping("/removeItem/{id}")
     public void deleteItem(@PathVariable Long id) { clothingService.delete(id); }
 }

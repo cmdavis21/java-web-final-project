@@ -24,8 +24,45 @@
             <!-- Where newProduct() will accept data and store in db -->
             <h3>Add a new product</h3>
             <form method="POST" id="productForm">
+                <!-- image url -->
+                <label for="imageURL">Add an image:</label>
+                <input type="file" multiple="" name="imageURL" id="imageURL">
+                <!-- item -->
+                <label for="itemType">Item:</label>
                 <input type="text" name="itemType" id="itemType" placeholder="Flannel shirt" required>
-                <textarea row="5" col="40" name="description" id="description" placeholder="Describe the item's color, style, and dress category." required></textarea>
+                <!-- sizes -->
+                <fieldset>
+                    <label for="sizes">Sizes Available:</label>
+                    <label for="sizes"><input type="checkbox" name="sizes[]" value="XXS">XXS</label>
+                    <label for="sizes"><input type="checkbox" name="sizes[]" value="XS">XS</label>
+                    <label for="sizes"><input type="checkbox" name="sizes[]" value="S">S</label>
+                    <label for="sizes"><input type="checkbox" name="sizes[]" value="M">M</label>
+                    <label for="sizes"><input type="checkbox" name="sizes[]" value="L">L</label>
+                    <label for="sizes"><input type="checkbox" name="sizes[]" value="XL">XL</label>
+                    <label for="sizes"><input type="checkbox" name="sizes[]" value="XXL">XXL</label>
+                </fieldset>
+                <!-- colors -->
+                <fieldset>
+                    <label for="colors">Colors Available:</label>
+                    <input type="text" name="colors" id="colors" placeholder="Black, tan, blue" required>
+                </fieldset>
+                <!-- category -->
+                <label for="category">Is it men or women's fashion?</label>
+                <input type="text" name="category" id="category" placeholder="Men or Women" required>
+                <!-- description area -->
+                <label for="description">Describe the item:</label>
+                <textarea row="5" col="40" name="description" id="description" placeholder="Hot summer item..." required></textarea>
+                <!-- price -->
+                <label for="price">Price:</label>
+                <input type="number" name="price" id="price" placeholder="$0.00" required>
+                <!-- has a discount? -->
+                <label for="hasDiscount">Is this item discounted?</label>
+                <select id="hasDiscount" name="hasDiscount">
+                    <option value="">Select</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <!-- submit button -->
                 <input type="submit" value="Submit Item!" id="submit">
             </form> 
         </div>

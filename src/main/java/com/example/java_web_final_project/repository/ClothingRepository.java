@@ -8,9 +8,15 @@ import java.util.List;
 
 @Repository
 public interface ClothingRepository extends JpaRepository<ClothingItem, Long> {
-    //custom methods
+    //custom repository search methods
 
-//    public void findByItem(ClothingItem item) {
-//        return item.findByItem(item);
-//    }
+    //find items by name
+
+    //find items by category, men or women's fashion
+
+    //find items by size
+
+    //find items by price
+
+    //find items by discount
 }

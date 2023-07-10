@@ -4,6 +4,8 @@ import com.example.java_web_final_project.model.ClothingItem;
 import com.example.java_web_final_project.repository.ClothingRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,29 +23,41 @@ public class ClothingService {
 
     //3. CRUD applications
 
-        //get method
+        //GET method
         public List<ClothingItem> findAll() {
             return clothingRepository.findAll();
         }
 
-        //post method
+        //POST method
         public void save(ClothingItem item) {
             clothingRepository.save(item);
         }
 
-        //put method
-        public void put(ClothingItem item) {
-            Long id = item.getId();
-            Optional<ClothingItem> optionalItem = clothingRepository.findById(id);
-            if (optionalItem.isPresent()) {
-                ClothingItem foundItem = optionalItem.get();
-                foundItem.setItemType(item.getItemType());
-                foundItem.setDescription(item.getDescription());
-                clothingRepository.save(foundItem);
-            }
-        }
+        //PUT method
+//        public void put(Long id, String fieldToUpdate, Object value) {
+//            Optional<ClothingItem> optionalItem = clothingRepository.findById(id);
+//            if (optionalItem.isPresent()) {
+//                ClothingItem foundItem = optionalItem.get();
+//                switch (fieldToUpdate) {
+//                    case "imageURL" -> foundItem.setImageURL((String) value);
+//                    case "itemType" -> foundItem.setItemType((String) value);
+//                    case "sizes" ->
+//                        ArrayList<String> newSizes = new ArrayList<>();
+//                        newSizes.add((String) value);
+//                        foundItem.setSizes(newSizes);
+//                        break;
+//                    case "colors" -> foundItem.setColors((String) value);
+//                    case "category" -> foundItem.setCategory((String) value);
+//                    case "description" -> foundItem.setDescription((String) value);
+//                    case "price" -> foundItem.setPrice((Double) value);
+//                    case "hasDiscount" -> foundItem.setHasDiscount((Boolean) value);
+//                    default -> throw new IllegalArgumentException("Invalid field name: " + fieldToUpdate);
+//                }
+//                clothingRepository.save(foundItem);
+//            }
+//        }
 
-        //delete method
+        //DELETE method
         public void delete(Long id) {
             clothingRepository.deleteById(id);
         }
